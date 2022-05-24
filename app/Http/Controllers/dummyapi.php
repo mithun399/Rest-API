@@ -35,4 +35,9 @@ class dummyapi extends Controller
     function search($name){
         return Vendor::where("name","like","%".$name."%")->get();
     }
+    function delete($id){
+        $vendor=Vendor::find($id);
+        $vendor->delete();
+        return ["delete"=>"success"];
+    }
 }
