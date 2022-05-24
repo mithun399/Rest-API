@@ -23,3 +23,4 @@ Route::post('data',[dummyapi::class,'getData']);
 Route::put('update',[dummyapi::class,'update']);
 Route::get('search/{name}',[dummyapi::class,'search']);
 Route::delete('delete/{id}',[dummyapi::class,'delete']);
+Route::post('save',[dummyapi::class,'testData']);
