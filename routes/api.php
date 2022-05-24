@@ -18,5 +18,7 @@ use App\Http\Controllers\dummyapi;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('insert',[dummyapi::class,'insertData']);
 Route::post('data',[dummyapi::class,'getData']);
 Route::put('update',[dummyapi::class,'update']);
+Route::get('search/{name}',[dummyapi::class,'search']);

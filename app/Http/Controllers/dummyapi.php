@@ -8,6 +8,10 @@ use App\Models\Vendor;
 
 class dummyapi extends Controller
 {
+    function insertData(){
+       return Vendor::all();
+    }
+
     function getData(Request $req){
         $vendor=new Vendor;
         $vendor->name=$req->name;
@@ -17,6 +21,7 @@ class dummyapi extends Controller
         return ["result"=>"success"];
 
     }
+
     function update(Request $req){
         $vendor=Vendor::find($req->id);
         $vendor->name=$req->name;
@@ -26,5 +31,8 @@ class dummyapi extends Controller
 
         return ["result"=>" update success"];
 
+    }
+    function search($name){
+        return Vendor::where("name","like","%".$name."%")->get();
     }
 }
